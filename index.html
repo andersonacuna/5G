@@ -1,10 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-</head>
-<body>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0">
+    <meta charset="utf-8">
+    <title>KML Layers</title>
+    <style>
+     html,
+		body {
+		  height: 100%;
+		  margin: 0;
+		  padding: 0;
+		}
 
+		<!-- #container { -->
+		  <!-- height: 100%; -->
+		  <!-- display: flex; -->
+		<!-- } -->
 
-</body>
+		<!-- #sidebar { -->
+		  <!-- flex-basis: 15rem; -->
+		  <!-- flex-grow: 1; -->
+		  <!-- padding: 1rem; -->
+		  <!-- max-width: 30rem; -->
+		  <!-- height: 100%; -->
+		  <!-- box-sizing: border-box; -->
+		  <!-- overflow: auto; -->
+		<!-- } -->
+
+		#map {
+		  flex-basis: 0;
+		  flex-grow: 4;
+		  height: 100%;
+		}
+    </style>
+  </head>
+  <body>   
+	<p>5G</p>
+      <div id="map"></div>
+    
+    <script>
+		function initMap() {
+		  var map = new google.maps.Map(document.getElementById('map'), {
+			zoom: 5,
+			center: {lat: 4.570868, lng: -74.297333}
+		  });	
+
+		  var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona1.kml", {preserveViewport:true});
+		  kmzLayer.setMap(map);
+		  
+		  var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona2.kml", {preserveViewport:true});
+		  kmzLayer.setMap(map);
+		  
+		  var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona3.kml", {preserveViewport:true});
+		  kmzLayer.setMap(map);
+		  
+		  
+		  /**const coordMapType = new CoordMapType(new google.maps.Size(256, 256));
+		  map.overlayMapTypes.insertAt(0, coordMapType);**/
+		  
+		}
+		
+		<!-- window.initMap = initMap; -->
+    </script>
+    <script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhSt6G3EERcbVfqCkMcfVYSyD4JHCrox0&callback=initMap&loading=async&v=weekly">
+	</script>
+	
+  </body>
 </html>
