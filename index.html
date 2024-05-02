@@ -3,29 +3,14 @@
   <head>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
-    <title>KML Layers</title>
+    <title>5G Movistar</title>
     <style>
      html,
 		body {
 		  height: 100%;
 		  margin: 0;
 		  padding: 0;
-		}
-
-		<!-- #container { -->
-		  <!-- height: 100%; -->
-		  <!-- display: flex; -->
-		<!-- } -->
-
-		<!-- #sidebar { -->
-		  <!-- flex-basis: 15rem; -->
-		  <!-- flex-grow: 1; -->
-		  <!-- padding: 1rem; -->
-		  <!-- max-width: 30rem; -->
-		  <!-- height: 100%; -->
-		  <!-- box-sizing: border-box; -->
-		  <!-- overflow: auto; -->
-		<!-- } -->
+		}	
 
 		#map {
 		  flex-basis: 0;
@@ -35,36 +20,140 @@
     </style>
   </head>
   <body>   
-	<p>5G</p>
-      <div id="map"></div>
-    
-    <script>
-		function initMap() {
-		  var map = new google.maps.Map(document.getElementById('map'), {
-			zoom: 5,
-			center: {lat: 4.570868, lng: -74.297333}
-		  });	
+	  <p>5G Movistar</p>	
+    <select id="department"><option value="" selected>Seleccionar</option></select>
+    <select id="city"><option value="" selected>Seleccionar</option></select>
+    <select id="locality"><option value="" selected>Seleccionar</option></select>
+    <div id="map"></div>
 
-		  var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona1.kml", {preserveViewport:true});
-		  kmzLayer.setMap(map);
-		  
-		  var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona2.kml", {preserveViewport:true});
-		  kmzLayer.setMap(map);
-		  
-		  var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona3.kml", {preserveViewport:true});
-		  kmzLayer.setMap(map);
-		  
-		  
-		  /**const coordMapType = new CoordMapType(new google.maps.Size(256, 256));
-		  map.overlayMapTypes.insertAt(0, coordMapType);**/
-		  
+<script>
+      var map;
+        function initMap() {
+            map = new google.maps.Map(document.getElementById('map'), {
+            zoom: 5,
+            center: {lat: 4.570868, lng: -74.297333}
+            });	
+
+            var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona1.kml", {preserveViewport:true});
+            kmzLayer.setMap(map);
+            
+            var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona2.kml", {preserveViewport:true});
+            kmzLayer.setMap(map);
+            
+            var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona3.kml", {preserveViewport:true});
+            kmzLayer.setMap(map);  
+            
+          }
+
+      var data ={
+        "Antioquia": {
+          "id": 1,
+		  "latlng": "6.462754,-74.5047831",
+          "ciudades": [
+            {
+              "id": 5,
+              "nombre": "Medellín",
+              "data": "NOROCCIDENTE",
+              "latlng": "6.2537144,-75.644171",
+              "localidades": [
+            {"id": 12, "latlng": "6.2497746,-75.6155542", "nombre": "AMERICA"},
+            {"id": 4, "latlng": "6.2789071,-75.5587721", "nombre": "ARANJUEZ"},
+            {"id": 16, "latlng": "6.215894,-75.5995008", "nombre": "BELEN"},
+            {"id": 9, "latlng": "6.2369569,-75.5553925", "nombre": "BUENOS AIRES"},
+            {"id": 5, "latlng": "6.2917525,-75.5723977", "nombre": "CASTILLA"},
+            {"id": 6, "latlng": "6.3000546,-75.5793392", "nombre": "DOCE DE OCTUBRE"},
+            {"id": 14, "latlng": "6.2079083,-75.567095", "nombre": "EL POBLADO"},
+            {"id": 15, "latlng": "6.2105938,-75.5849303", "nombre": "GUAYABAL"},
+            {"id": 10, "latlng": "6.2500187,-75.5649412", "nombre": "LA CANDELARIA"},
+            {"id": 11, "latlng": "6.250656,-75.5877239", "nombre": "LAURELES ESTADIO"},
+            {"id": 3, "latlng": "6.2669753,-75.5653376", "nombre": "MANRIQUE"},
+            {"id": 1, "latlng": "6.3041761,-75.5456239", "nombre": "POPULAR"},
+            {"id": 7, "latlng": "6.2775315,-75.5960279", "nombre": "ROBLEDO"},
+            {"id": 13, "latlng": "6.2553166,-75.6124912", "nombre": "SAN JAVIER"},
+            {"id": 2, "latlng": "6.2931389,-75.558418", "nombre": "SANTA CRUZ"},
+            {"id": 8, "latlng": "6.2482199,-75.5515", "nombre": "VILLA HERMOSA"}
+              ]
+            }
+          ]
+        },
+        "Atlántico": {
+          "id": 2,
+          "ciudades": [
+            {
+              "id": 6,
+              "nombre": "Barranquilla",
+              "data": "NORTE",
+              "latlng": "10.96854,-74.78132",
+              "localidades": [
+            {"id": 1, "latlng": "19,10.9373304,-74.80518", "nombre": "METROPOLITANA"},
+            {"id": 2, "latlng": "18,10.9906315,-74.8240828", "nombre": "NORTE CENTRO HISTORICO"},
+            {"id": 3, "latlng": "17,11.0264175,-74.8184824", "nombre": "RIOMAR"},
+            {"id": 4, "latlng": "21,10.992625,-74.7793768", "nombre": "SUR ORIENTE"},
+            {"id": 5, "latlng": "20,10.9698862,-74.7920304", "nombre": "SUROCCIDENTE"}
+              ]
+            }
+          ]
+        }
+      };
+
+      window.onload = function() {
+        var departmentSelect = document.getElementById('department');
+        var citySelect = document.getElementById('city');
+        var localitySelect = document.getElementById('locality');
+
+        for (var department in data) {
+          departmentSelect.options.add(new Option(department, department));
+        }
+
+        departmentSelect.onchange = function() {
+          updateSelect(citySelect, data[this.value].ciudades);
+		  updateMap(data[this.value].latlng, 8);
+        };
+
+        citySelect.onchange = function() {		
+          var department = departmentSelect.value;
+          var city = this.value;
+          var localities = data[department].ciudades.find(c => c.id == city).localidades;
+          updateSelect(localitySelect, localities);
+		  updateMap(data[department].ciudades.find(c => c.id == city).latlng, 11);
+        };
+        
+        localitySelect.onchange = function() {		
+		  var department = departmentSelect.value;
+          var city = citySelect.value;
+		  var locality = this.value;
+		  var localities = data[department].ciudades.find(c => c.id == city).localidades;
+		  var localitylatlng = localities.find(l => l.id == locality);
+          updateMap(localitylatlng.latlng, 15);
+        };
+      };
+
+      function updateSelect(select, options) {
+        var defaultOption = select.options[0];
+        select.options.length = 0;
+        select.options.add(defaultOption);
+        for (var i = 0; i < options.length; i++) {
+          select.options.add(new Option(options[i].nombre, options[i].id));
+        }
+      }
+
+      function updateMap(value, zoom) {
+		if(value && zoom){
+		var latlng = value.split(',');
+			var lat = parseFloat(latlng[0]);
+			var lng = parseFloat(latlng[1]);
+			map.setCenter({lat: lat, lng: lng});
+			map.setZoom(zoom);
+		}else{
+			map.setCenter({lat: 4.570868, lng: -74.297333})
+			map.setZoom(5);
 		}
-		
-		<!-- window.initMap = initMap; -->
-    </script>
-    <script async defer
+      }
+</script>
+	
+<script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhSt6G3EERcbVfqCkMcfVYSyD4JHCrox0&callback=initMap&loading=async&v=weekly">
-	</script>
+</script>
 	
   </body>
 </html>
