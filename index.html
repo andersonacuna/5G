@@ -48,8 +48,12 @@
 		}
 		
 		p{
-			<!-- text-align: center; -->
+			text-align: right;
 			font-family: "Telefonica Regular", sans-serif, Helvetica, Arial;
+		}
+		
+		label{
+		 color: #019df4;
 		}
 		
     </style>
@@ -60,6 +64,7 @@
 	</div>
 	<div class="container">
 		<div class="select-style">
+			<!-- <label class="c-quote__label color-blue" for="">Departamento</label> -->
 			<select id="department"><option value="" selected>Seleccionar Departamento</option></select>
 		</div>
 		<div class="select-style">
@@ -91,55 +96,316 @@
           }
 
       var data ={
-        "Antioquia": {
-          "id": 1,
-		  "latlng": "6.462754,-74.5047831",
-          "ciudades": [
-            {
-              "id": 5,
-              "nombre": "Medellín",
-              "data": "NOROCCIDENTE",
-              "latlng": "6.2537144,-75.644171",
-              "localidades": [
-            {"id": 12, "latlng": "6.2497746,-75.6155542", "nombre": "AMERICA"},
-            {"id": 4, "latlng": "6.2789071,-75.5587721", "nombre": "ARANJUEZ"},
-            {"id": 16, "latlng": "6.215894,-75.5995008", "nombre": "BELEN"},
-            {"id": 9, "latlng": "6.2369569,-75.5553925", "nombre": "BUENOS AIRES"},
-            {"id": 5, "latlng": "6.2917525,-75.5723977", "nombre": "CASTILLA"},
-            {"id": 6, "latlng": "6.3000546,-75.5793392", "nombre": "DOCE DE OCTUBRE"},
-            {"id": 14, "latlng": "6.2079083,-75.567095", "nombre": "EL POBLADO"},
-            {"id": 15, "latlng": "6.2105938,-75.5849303", "nombre": "GUAYABAL"},
-            {"id": 10, "latlng": "6.2500187,-75.5649412", "nombre": "LA CANDELARIA"},
-            {"id": 11, "latlng": "6.250656,-75.5877239", "nombre": "LAURELES ESTADIO"},
-            {"id": 3, "latlng": "6.2669753,-75.5653376", "nombre": "MANRIQUE"},
-            {"id": 1, "latlng": "6.3041761,-75.5456239", "nombre": "POPULAR"},
-            {"id": 7, "latlng": "6.2775315,-75.5960279", "nombre": "ROBLEDO"},
-            {"id": 13, "latlng": "6.2553166,-75.6124912", "nombre": "SAN JAVIER"},
-            {"id": 2, "latlng": "6.2931389,-75.558418", "nombre": "SANTA CRUZ"},
-            {"id": 8, "latlng": "6.2482199,-75.5515", "nombre": "VILLA HERMOSA"}
-              ]
-            }
-          ]
-        },
-        "Atlántico": {
-          "id": 2,
-          "ciudades": [
-            {
-              "id": 6,
-              "nombre": "Barranquilla",
-              "data": "NORTE",
-              "latlng": "10.96854,-74.78132",
-              "localidades": [
-            {"id": 1, "latlng": "10.9373304,-74.80518", "nombre": "METROPOLITANA"},
-            {"id": 2, "latlng": "10.9906315,-74.8240828", "nombre": "NORTE CENTRO HISTORICO"},
-            {"id": 3, "latlng": "11.0264175,-74.8184824", "nombre": "RIOMAR"},
-            {"id": 4, "latlng": "10.992625,-74.7793768", "nombre": "SUR ORIENTE"},
-            {"id": 5, "latlng": "10.9698862,-74.7920304", "nombre": "SUROCCIDENTE"}
-              ]
-            }
-          ]
-        }
-      };
+		  "Antioquia": {
+			"id": 1,
+			"latlng": "7.0000000,-75.5000000",
+			"ciudades": [
+			  {
+				"id": 5,
+				"nombre": "Medellín",
+				"data": "NOROCCIDENTE",
+				"latlng": "4,6.24894080956,-75.5770556256",
+				"localidades": [
+					{"id": 12, "latlng": "6.2497746,-75.6155542", "nombre": "AMERICA"},
+					{"id": 4, "latlng": "6.2789071,-75.5587721", "nombre": "ARANJUEZ"},
+					{"id": 16, "latlng": "6.215894,-75.5995008", "nombre": "BELEN"},
+					{"id": 9, "latlng": "6.2369569,-75.5553925", "nombre": "BUENOS AIRES"},
+					{"id": 5, "latlng": "6.2917525,-75.5723977", "nombre": "CASTILLA"},
+					{"id": 6, "latlng": "6.3000546,-75.5793392", "nombre": "DOCE DE OCTUBRE"},
+					{"id": 14, "latlng": "6.2079083,-75.567095", "nombre": "EL POBLADO"},
+					{"id": 15, "latlng": "6.2105938,-75.5849303", "nombre": "GUAYABAL"},
+					{"id": 10, "latlng": "6.2500187,-75.5649412", "nombre": "LA CANDELARIA"},
+					{"id": 11, "latlng": "6.250656,-75.5877239", "nombre": "LAURELES ESTADIO"},
+					{"id": 3, "latlng": "6.2669753,-75.5653376", "nombre": "MANRIQUE"},
+					{"id": 1, "latlng": "6.3041761,-75.5456239", "nombre": "POPULAR"},
+					{"id": 7, "latlng": "6.2775315,-75.5960279", "nombre": "ROBLEDO"},
+					{"id": 13, "latlng": "6.2553166,-75.6124912", "nombre": "SAN JAVIER"},
+					{"id": 2, "latlng": "6.2931389,-75.558418", "nombre": "SANTA CRUZ"},
+					{"id": 8, "latlng": "6.2482199,-75.5515", "nombre": "VILLA HERMOSA"}
+				]
+			  }
+			]
+		  },
+		  "Atlántico": {
+			"id": 8,
+			"ciudades": [
+			  {
+				"id": 131,
+				"nombre": "Barranquilla",
+				"data": "NORTE",
+				"latlng": "10.96854,-74.78132",
+				"localidades": [
+					{"id": 1, "latlng": "19,10.9373304,-74.80518", "nombre": "METROPOLITANA"},
+					{"id": 2, "latlng": "18,10.9906315,-74.8240828", "nombre": "NORTE CENTRO HISTORICO"},
+					{"id": 3, "latlng": "17,11.0264175,-74.8184824", "nombre": "RIOMAR"},
+					{"id": 4, "latlng": "21,10.992625,-74.7793768", "nombre": "SUR ORIENTE"},
+					{"id": 5, "latlng": "20,10.9698862,-74.7920304", "nombre": "SUROCCIDENTE"}
+				]
+			  }
+			]
+		  },
+		  
+		  
+			"Bogotá": {
+			  "id": 11,
+			  "data": "BOGOTA",
+			  "latlng": "4.62457504964,-74.1139187163",
+			  "ciudades": [
+				{
+				  "id": 154,
+				  "nombre": "BOGOTA D.C.",
+				  "data": "S",
+				  "latlng": "4.62457504964,-74.1139187163",
+				  "localidades": [
+					  {"id": 1, "latlng": "4.5872049,-74.109757", "nombre": "ANTONIO NARIÑO"},
+					  {"id": 2, "latlng": "4.6682801,-74.0718106", "nombre": "BARRIOS UNIDOS"},
+					  {"id": 3, "latlng": "4.6269658,-74.1897994", "nombre": "BOSA"},
+					  {"id": 4, "latlng": "4.6360566,-74.020949", "nombre": "CHAPINERO"},
+					  {"id": 5, "latlng": "4.557898,-74.1378022", "nombre": "CIUDAD BOLIVAR"},
+					  {"id": 6, "latlng": "4.6977974,-74.1094023", "nombre": "ENGATIVA"},
+					  {"id": 7, "latlng": "4.6791703,-74.135313", "nombre": "FONTIBON"},
+					  {"id": 8, "latlng": "4.6348325,-74.1588437", "nombre": "KENNEDY"},
+					  {"id": 9, "latlng": "4.5955146,-74.0723455", "nombre": "LA CANDELARIA"},
+					  {"id": 10, "latlng": "4.6057168,-74.088546", "nombre": "LOS MARTIRES"},
+					  {"id": 11, "latlng": "4.6194477,-74.110567", "nombre": "PUENTE ARANDA"},
+					  {"id": 12, "latlng": "4.5687457,-74.1099151", "nombre": "RAFAEL URIBE URIBE"},
+					  {"id": 13, "latlng": "4.5628522,-74.0768328", "nombre": "SAN CRISTOBAL"},
+					  {"id": 14, "latlng": "4.5954418,-74.0384101", "nombre": "SANTAFE"},
+					  {"id": 15, "latlng": "4.7584635,-74.0812397", "nombre": "SUBA"},
+					  {"id": 16, "latlng": "4.522905,-74.0863637", "nombre": "SUMAPAZ"},
+					  {"id": 17, "latlng": "4.6410419,-74.0873249", "nombre": "TEUSAQUILLO"},
+					  {"id": 18, "latlng": "4.5650726,-74.1170173", "nombre": "TUNJUELITO"},
+					  {"id": 19, "latlng": "4.7299792,-74.0140682", "nombre": "USAQUEN"},
+					  {"id": 20, "latlng": "4.522905,-74.0863637", "nombre": "USME"}
+				  ]
+				}
+			  ]
+			},
+		  
+		  "Bolivar": {
+			  "id": 3,
+			  "data": "CARIBE",
+			  "latlng": "8.8975083,-77.6115534",
+			  "ciudades": [
+				{
+				  "id": 160,
+				  "nombre": "Cartagena",
+				  "data": "S",
+				  "latlng": "10.3988164844,-75.501229216",
+				  "localidades": [
+					{"id": 1, "latlng": "10.43344022770848,-75.52497271118156", "nombre": "HISTORICA Y CARIBE NORTE"},
+					{"id": 2, "latlng": "10.39832303979613,-75.49922350463859", "nombre": "INDUSTRIAL Y DELABAHIA"},
+					{"id": 3, "latlng": "10.404401297657769,-75.55381182250969", "nombre": "LA VIRGEN Y TURISTICA"}
+				  ]
+				}
+			  ]
+			},
+			
+			"Cesar": {
+			  "id": 20,
+			  "data": "CARIBE",
+			  "latlng": "9.2675198,-76.1566034",
+			  "ciudades": [
+				{
+				  "id": 414,
+				  "nombre": "Valledupar",
+				  "data": "S",
+				  "latlng": "10.4615184337,-73.2586483431",
+				  "localidades": [
+					  {"id": 221, "latlng": "10.470501,-73.246873", "nombre": "COMUNA 1"},
+					  {"id": 222, "latlng": "10.454662,-73.235491", "nombre": "COMUNA 2"},
+					  {"id": 223, "latlng": "10.448926,-73.251998", "nombre": "COMUNA 3"},
+					  {"id": 224, "latlng": "10.453393,-73.267581", "nombre": "COMUNA 4"},
+					  {"id": 225, "latlng": "10.474178,-73.273358", "nombre": "COMUNA 5"},
+					  {"id": 226, "latlng": "10.481305,-73.256209", "nombre": "COMUNA 6"}
+				  ]
+				}
+			  ]
+			},
+			
+			"Córdoba": {
+			  "id": 23,
+			  "data": "CARIBE",
+			  "latlng": "8.3994143,-76.9668674",
+			  "ciudades": [
+				{
+				  "id": 438,
+				  "nombre": "Monteria",
+				  "data": "S",
+				  "latlng": "8.74991666326,-75.8956393314",
+				  "localidades": [
+					  {"id": 202, "latlng": "8.755202,-75.904601", "nombre": "COMUNA 1"},
+					  {"id": 203, "latlng": "8.757583,-75.894826", "nombre": "COMUNA 2"},
+					  {"id": 204, "latlng": "8.737476,-75.89528", "nombre": "COMUNA 3"},
+					  {"id": 205, "latlng": "8.728024,-75.887476", "nombre": "COMUNA 4"},
+					  {"id": 206, "latlng": "8.749885,-75.888539", "nombre": "COMUNA 5"},
+					  {"id": 207, "latlng": "8.739641,-75.874531", "nombre": "COMUNA 6"},
+					  {"id": 208, "latlng": "8.762726,-75.874419", "nombre": "COMUNA 7"},
+					  {"id": 209, "latlng": "8.767583,-75.863322", "nombre": "COMUNA 8"},
+					  {"id": 210, "latlng": "8.796847,-75.854782", "nombre": "COMUNA 9"}
+				  ]
+				}
+			  ]
+			},
+			
+			"Magdalena": {
+			  "id": 47,
+			  "data": "CARIBE",
+			  "latlng": "10.1307662,-75.5651415",
+			  "ciudades": [
+				{
+				  "id": 659,
+				  "nombre": "Santa Marta",
+				  "data": "S",
+				  "latlng": "11.2257031416,-74.1883970496",
+				  "localidades": [
+					  {"id": 196, "latlng": "11.2109333,-74.17603055", "nombre": "CULTURAL TAYRONA"},
+					  {"id": 195, "latlng": "11.2482167,-74.19414166", "nombre": "HISTORICA RODRIGO DE BASTIDAS"},
+					  {"id": 197, "latlng": "11.1726444,-74.183738", "nombre": "TURISTICA PERLA DEL CARIBE"}	
+				  ]
+				}
+			  ]
+			},
+			
+			"Meta": {
+			  "id": 50,
+			  "data": "SURORIENTE",
+			  "latlng": "3.2691995,-75.6388548",
+			  "ciudades": [
+				{
+				  "id": 685,
+				  "nombre": "Villavicencio",
+				  "data": "S",
+				  "latlng": "4.12295758045,-73.626877897",
+				  "localidades": [
+					  {"id": 180, "latlng": "4.160689,-73.644195", "nombre": "Comuna 1"},
+					  {"id": 181, "latlng": "4.14238,-73.638953", "nombre": "Comuna 2"},
+					  {"id": 182, "latlng": "4.150475,-73.626524", "nombre": "Comuna 3"},
+					  {"id": 183, "latlng": "4.147939,-73.604661", "nombre": "Comuna 4"},
+					  {"id": 184, "latlng": "4.127144,-73.603137", "nombre": "Comuna 5"},
+					  {"id": 185, "latlng": "4.138499,-73.626638", "nombre": "Comuna 6"},
+					  {"id": 186, "latlng": "4.12351,-73.632474", "nombre": "Comuna 7"},
+					  {"id": 188, "latlng": "4.107096,-73.647586", "nombre": "Comuna 8"}
+				  ]
+				}
+			  ]
+			},
+					
+			"Norte de Santander": {
+			  "id": 54,
+			  "data": "NORORIENTE",
+			  "latlng": "8.0824001,-74.1528081",
+			  "ciudades": [
+				{
+				  "id": 781,
+				  "nombre": "Cucuta",
+				  "data": "S",
+				  "latlng": "7.90526711655,-72.5055909659",
+				  "localidades": [
+					  {"id": 54, "latlng": "7.878884747965595,-72.50811277801512", "nombre": "CEMENTERIO"},
+					  {"id": 45, "latlng": "7.887811799035296,-72.50399290496824", "nombre": "CENTRO"},
+					  {"id": 46, "latlng": "7.898694038733996,-72.4931782382202", "nombre": "CENTRO ORIENTAL"},
+					  {"id": 51, "latlng": "7.9160370154221225,-72.52124487335203", "nombre": "NOROCCIDENTAL"},
+					  {"id": 49, "latlng": "7.9071955889997145,-72.49798475677488", "nombre": "NORORIENTAL"},
+					  {"id": 50, "latlng": "7.9361845569594385,-72.50176130706785", "nombre": "NORTE"},
+					  {"id": 52, "latlng": "7.9008194427168625,-72.52948461944578", "nombre": "OCCIDENTAL"},
+					  {"id": 48, "latlng": "7.9012445221988745,-72.47137724334715", "nombre": "ORIENTAL"},
+					  {"id": 53, "latlng": "7.886961611995588,-72.51824079925535", "nombre": "SUROCCIDENTAL"},
+					  {"id": 47, "latlng": "7.882540611211313,-72.47420965606688", "nombre": "SURORIENTAL"}
+				  ]
+				}
+			  ]
+			},
+			
+			"Santander": {
+			  "id": 68,
+			  "data": "NORORIENTE",
+			  "latlng": "6.9287836,-74.8228102",
+			  "ciudades": [
+				{
+				  "id": 847,
+				  "nombre": "Bucaramanga",
+				  "data": "S",
+				  "latlng": "7.12278728534,-73.132325231",
+				  "localidades": [
+						  {"id": 66, "latlng": "7.113970583319009,-73.10789753967286", "nombre": "CABECERA DEL LLANO ORIENTAL"},
+						  {"id": 69, "latlng": "7.103537146660104,-73.1235187249756", "nombre": "CENTRO"},
+						  {"id": 67, "latlng": "7.116184996524283,-73.12454869323732", "nombre": "CENTRO ORIENTAL"},
+						  {"id": 59, "latlng": "7.102557669021827,-73.12714507156373", "nombre": "GARCIA ROVIRA CENTRO ORIENTAL"},
+						  {"id": 61, "latlng": "7.099959913857003,-73.116566439209", "nombre": "LA CIUDADELA CENTRO OCCIDENTAL"},
+						  {"id": 60, "latlng": "7.105666438692944,-73.11261822753907", "nombre": "LA CONCORDIA SURCENTRAL"},
+						  {"id": 63, "latlng": "7.090888948863279,-73.10214688354493", "nombre": "LA PEDREGOSA SURORIENTAL"},
+						  {"id": 145, "latlng": "7.098619993425252,-73.09870512130736", "nombre": "LAGOS DEL CACIQUE"},
+						  {"id": 68, "latlng": "7.133814751003036,-73.1030051904297", "nombre": "MORRORRICO"},
+						  {"id": 70, "latlng": "7.08249921187391,-73.12102963500978", "nombre": "MUTIS"},
+						  {"id": 56, "latlng": "7.136667811739463,-73.1170170503235", "nombre": "NORORIENTAL"},
+						  {"id": 55, "latlng": "7.139307941646401,-73.13120057159425", "nombre": "NORTE"},
+						  {"id": 58, "latlng": "7.120911881267955,-73.13150097900392", "nombre": "OCCIDENTAL"},
+						  {"id": 64, "latlng": "7.086204342982029,-73.11450650268556", "nombre": "PROVENZA SUROCCIDENTAL"},
+						  {"id": 57, "latlng": "7.120997049916516,-73.11339070373536", "nombre": "SAN FRANCISCO"},
+						  {"id": 65, "latlng": "7.078538521575129,-73.12077214294435", "nombre": "SUR"},
+						  {"id": 62, "latlng": "7.087439380059827,-73.11484982543946", "nombre": "SUROCCIDENTE"}
+				  ]
+				}
+			  ]
+			},
+				
+			"Tolima": {
+			  "id": 73,
+			  "data": "SURORIENTE",
+			  "latlng": "4.0957814,-76.611621",
+			  "ciudades": [
+				{
+				  "id": 958,
+				  "nombre": "Ibague",
+				  "data": "S",
+				  "latlng": "4.4396307255,-75.1963501468",
+				  "localidades": [
+
+				  ]
+				}
+			  ]
+			},
+			
+			"Valle del Cauca": {
+			  "id": 76,
+			  "data": "SUROCCIDENTE",
+			  "latlng": "4.0400752,-77.9490432",
+			  "ciudades": [
+				{
+				  "id": 1005,
+				  "nombre": "Cali",
+				  "data": "S",
+				  "latlng": "3.40638218413,-76.5263911952",
+				  "localidades": [
+					  {"id": 101, "latlng": "3.456347912861174,-76.55721548614497", "nombre": "COMUNA 1"},
+					  {"id": 103, "latlng": "3.4746820921042985,-76.52648809967036", "nombre": "COMUNA 2"},
+					  {"id": 105, "latlng": "3.4461525849910664,-76.53447035369868", "nombre": "COMUNA 3"},
+					  {"id": 107, "latlng": "3.4705697837568756,-76.5116179328918", "nombre": "COMUNA 4"},
+					  {"id": 109, "latlng": "3.47018425393115,-76.49372223434443", "nombre": "COMUNA 5"},
+					  {"id": 111, "latlng": "3.479222745083421,-76.48385170516963", "nombre": "COMUNA 6"},
+					  {"id": 113, "latlng": "3.4596463778424034,-76.48520353851313", "nombre": "COMUNA 7"},
+					  {"id": 115, "latlng": "3.445338667548661,-76.50992277679438", "nombre": "COMUNA 8"},
+					  {"id": 117, "latlng": "3.43437213315223,-76.53095129547114", "nombre": "COMUNA 9"},
+					  {"id": 119, "latlng": "3.4140665770573104,-76.53721693572993", "nombre": "COMUNA 10"},
+					  {"id": 121, "latlng": "3.416979636857875,-76.5208232742309", "nombre": "COMUNA 11"},
+					  {"id": 123, "latlng": "3.4338580737590765,-76.50485876617427", "nombre": "COMUNA 12"},
+					  {"id": 125, "latlng": "3.428117725071776,-76.487520967102", "nombre": "COMUNA 13"},
+					  {"id": 127, "latlng": "3.424433602536162,-76.4779937606811", "nombre": "COMUNA 14"},
+					  {"id": 129, "latlng": "3.4066982099049183,-76.50073889312739", "nombre": "COMUNA 15"},
+					  {"id": 131, "latlng": "3.410553757900904,-76.5248573165893", "nombre": "COMUNA 16"},
+					  {"id": 133, "latlng": "3.3924753883070338,-76.53086546478266", "nombre": "COMUNA 17"},
+					  {"id": 135, "latlng": "3.389133851633705,-76.55464056549067", "nombre": "COMUNA 18"},
+					  {"id": 137, "latlng": "3.4232341177213663,-76.54459837493891", "nombre": "COMUNA 19"},
+					  {"id": 139, "latlng": "3.4189502311220026,-76.56167868194575", "nombre": "COMUNA 20"},
+					  {"id": 141, "latlng": "3.426232826942489,-76.46417501983638", "nombre": "COMUNA 21"},
+					  {"id": 143, "latlng": "3.354775332836112,-76.53833273468013", "nombre": "COMUNA 22"}
+
+				  ]
+				}
+			  ]
+			}
+		};
 
       window.onload = function() {
         var departmentSelect = document.getElementById('department');
