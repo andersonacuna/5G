@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+	
+
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <title>5G Movistar</title>
@@ -56,6 +58,11 @@
 		 color: #019df4;
 		}
 		
+		#map > div > div > div > div > div:nth-child(2) img[draggable="false"] {
+		  opacity: 0.1;
+		}
+		
+		
     </style>
   </head>
   <body>   
@@ -81,19 +88,20 @@
         function initMap() {
             map = new google.maps.Map(document.getElementById('map'), {
             zoom: 5,
-            center: {lat: 4.570868, lng: -74.297333}
+            center: {lat:4.62457504964, lng:-74.1139187163}// {lat: 4.570868, lng: -74.297333}
             });	
 
-            var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona1.kml", {preserveViewport:true});
+            var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona1.kml", {suppressInfoWindows: true, preserveViewport:true, });
             kmzLayer.setMap(map);
             
-            var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona2.kml", {preserveViewport:true});
+              var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona2.kml", {suppressInfoWindows: true, preserveViewport:true});
             kmzLayer.setMap(map);
             
-            var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona3.kml", {preserveViewport:true});
-            kmzLayer.setMap(map);  
+            var kmzLayer = new google.maps.KmlLayer("https://andersonacuna.github.io/5G/files/kml/Colombia_5GNR_1Q2024_Zona3.kml", {suppressInfoWindows: true, preserveViewport:true});
+            kmzLayer.setMap(map);
             
           }
+		  
 
       var data ={
 		  "Antioquia": {
