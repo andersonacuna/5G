@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-	
-
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <title>5G Movistar</title>
@@ -23,8 +21,8 @@
 		
 		.container {
 			display: flex;
-			justify-content: space-around;
 			flex-wrap: wrap;
+			padding: 10px 0px 10px 40px;
 		}
 
 		.select-style {
@@ -63,31 +61,195 @@
 		}
 		
 		
+		/* Style the tab */
+		.tab {
+		  overflow: hidden;
+		  border: 1px solid #ccc;
+		  background-color: #f1f1f1;
+		}
+
+		/* Style the buttons inside the tab */
+		.tab button {
+		  background-color: inherit;
+		  float: left;
+		  border: none;
+		  outline: none;
+		  cursor: pointer;
+		  padding: 14px 16px;
+		  transition: 0.3s;
+		  font-size: 14px;
+		  width: 33.3333%;
+		}
+
+		/* Change background color of buttons on hover */
+		.tab button:hover {
+		  background-color: #ddd;
+		}
+
+		/* Create an active/current tablink class */
+		.tab button.active {
+		  background-color: #019df4;
+		}
+
+		/* Style the tab content */
+		.tabcontent {
+		  display: none;
+		  padding: 6px 12px;
+		  border: 1px solid #ccc;
+		  border-top: none;
+		}
+		
+		input[type=button], input[type=submit], input[type=reset] {
+		  background-color: #019df4;
+		  border: none;
+		  color: white;
+		  text-decoration: none;
+		  margin: 4px 2px;
+		  cursor: pointer;
+		  border-radius: 30px;   
+		  display: block;
+		  padding: 8px 12px;
+		  min-width: 150px;
+		  text-align: center;
+		  font-weight: bold;
+		}
+
+		.wrapCordsType{
+			padding: 0px 10px 0px 10px;
+			margin: 5px 0px 5px 0px;
+			width: 10%;
+		}
+		
+		
+		.inputCords{
+			padding: 0px 10px 0px 10px;
+			margin: 5px 0px 5px 0px;
+		}
+		
     </style>
   </head>
   <body>   
 	<div>
 		<p>Fecha de actualización: 30/04/2024</p>	
 	</div>
-	<div class="container">
-		<div class="select-style">
-			<!-- <label class="c-quote__label color-blue" for="">Departamento</label> -->
-			<select id="department"><option value="" selected>Seleccionar Departamento</option></select>
-		</div>
-		<div class="select-style">
-			<select id="city"><option value="" selected>Seleccionar Ciudad</option></select>
-		</div>
-		<div class="select-style">
-			<select id="locality"><option value="" selected>Seleccionar Localidad</option></select>
+	
+	<div class="tab">
+	  <button class="tablinks" onclick="openTab(event, 'contDepartment')">Consultar por Departamentos - municipios</button>	  
+	  <button class="tablinks" onclick="openTab(event, 'contDecimales')">Consultar por coordenadas geográficas (Decimales)</button>
+	  <button class="tablinks" onclick="openTab(event, 'contGMS')">Consultar por coordenadas geográficas (g m s)</button>
+	</div>
+	
+	<div id="contDepartment" class="tabcontent">
+		<div class="container">
+			<div class="select-style">
+				<!-- <label class="c-quote__label color-blue" for="">Departamento</label> -->
+				<select id="department"><option value="" selected>Seleccionar Departamento</option></select>
+			</div>
+			<div class="select-style">
+				<select id="city"><option value="" selected>Seleccionar Ciudad</option></select>
+			</div>
+			<div class="select-style">
+				<select id="locality"><option value="" selected>Seleccionar Localidad</option></select>
+			</div>
 		</div>
 	</div>
+	
+	
+	<div id="contGMS" class="tabcontent">
+		<div class="margen span12">
+			<form id="grados" name="grados" action="javascript:consultGMS()" method="post">
+				<div class="wrapDatumTxt">
+					Coordenadas se deben diligenciar en Datum WGS84.<br><br>
+					El separador de decimales que debe utilizar es el punto (.)
+				</div>
+
+				<div class="container">
+					<div class="wrapCordsType span2">
+						<div class="txtCords">Longitud</div>
+					</div>
+					<div class="inputCords span2">
+						<input type="text" id="grados2" placeholder="Ej: 6" class="geo" required>
+					</div>
+					<div class="inputCords span2">
+						<input type="text" id="minutos2" placeholder="Ej: 13" class="geo" required>
+					</div>
+					<div class="inputCords span2">
+						<input type="text" id="segundos2" placeholder="Ej: 54" class="geo" required>
+					</div>
+					<div class="inputCords span2">
+						<select id="sentido2" name="_coberturatecnologia_WAR_coberturatarifasportlet_sentido1" class="geo" required>
+							<option value="">Seleccione...</option>
+							<option value="N">Norte (N)</option>
+							<option value="S">Sur (S)</option>
+						</select>
+					</div>
+				</div>
+				<div class="container">
+					<div class="wrapCordsType span2">
+						<div class="txtCords">Latitud</div>
+					</div>
+					<div class="inputCords span2">
+						<input type="text" id="grados1" placeholder="Ej: 75" class="geo" required>
+					</div>
+					<div class="inputCords span2">
+						<input type="text" id="minutos1" placeholder="Ej: 35" class="geo" required>
+					</div>
+					<div class="inputCords span2">
+						<input type="text" id="segundos1" placeholder="Ej: 10" class="geo" required>
+					</div>
+					<div class="inputCords span2">
+						<select id="sentido1" name="_coberturatecnologia_WAR_coberturatarifasportlet_sentido2" class="geo" required>
+							<option value="">seleccione...</option>
+							<option value="W">Este (E)</option>
+							<option value="O">Oeste (O)</option>
+						</select>
+					</div>
+				</div>
+				<input type="submit" value="Consultar">
+			</form>			
+		</div>	
+	</div>
+
+	<div id="contDecimales" class="tabcontent">
+		<div class="margen span12">
+			<form id="coordenadas" name="coordenadas" action="javascript:consultDec()" onsubmit="return validateForm()" method="post">
+				<div class="wrapDatumTxt">
+					Coordenadas se deben diligenciar en Datum WGS84.
+					<br><br>
+					El separador de decimales que debe utilizar es el punto (.)
+				</div>
+
+				<div class="container">
+					<div class="wrapCordsType span2">
+						<div class="txtCords">Longitud</div>
+					</div>
+
+					<div class="span3">											
+						<input class="inputCords c" type="text" placeholder="Ej: 6.23139" id="longitud" name="longitud" required>											
+					</div>
+				</div>
+
+				<div class="container">									
+					<div class="wrapCordsType span2">
+						<div class="txtCords">Latitud</div>
+					</div>
+						<input class="inputCords c" type="text" placeholder="Ej: -75.58611" id="latitud" name="latitud" required>										
+					 <div class="wrapDatumTxt">
+						 Para referencia Oeste, el valor debe ser negativo.
+					 </div>
+				</div>
+				<input type="submit" value="Consultar">
+			</form>
+		</div>
+	</div>
+		
     <div id="map"></div>
 
 <script>
       var map;
         function initMap() {
-            map = new google.maps.Map(document.getElementById('map'), {		    
-	    scaleControl: true,
+            map = new google.maps.Map(document.getElementById('map'), {
+			scaleControl: true,
             zoom: 5,
             center: {lat:4.62457504964, lng:-74.1139187163}// {lat: 4.570868, lng: -74.297333}
             });	
@@ -471,6 +633,55 @@
 			map.setZoom(5);
 		}
       }
+	  
+	function openTab(evt, cityName) {
+		  var i, tabcontent, tablinks;
+		  tabcontent = document.getElementsByClassName("tabcontent");
+		  for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		  }
+		  tablinks = document.getElementsByClassName("tablinks");
+		  for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className = tablinks[i].className.replace(" active", "");
+		  }
+		  document.getElementById(cityName).style.display = "block";
+		  evt.currentTarget.className += " active";
+	}
+	
+	function validateForm() {
+	  let x = document.forms["coordenadas"]["longitud"].value;
+	  if (x == "") {
+		alert("Esta vacio el campo Longitud");
+		return false;
+	  }
+	  let y = document.forms["coordenadas"]["latitud"].value;
+	    if (y == "") {
+		alert("Esta vacio el campo Latitud");
+		return false;
+	  }
+	}
+	
+	function consultDec(){
+		let cor = document.getElementById('longitud').value + ','+ document.getElementById('latitud').value;
+		updateMap(cor, 12);
+	}	
+	
+	function convertirAGradosDecimales(grados, minutos, segundos, direccion) {		
+		var gradosDecimales = parseInt(grados) + parseInt(minutos) / 60 + parseInt(segundos) / 3600;
+		if (direccion === 'S' || direccion === 'W') {
+			gradosDecimales = -gradosDecimales;
+		}
+		return gradosDecimales;
+	}
+
+	function consultGMS() {	
+		var longitud = convertirAGradosDecimales(document.getElementById('grados2').value, document.getElementById('minutos2').value, document.getElementById('segundos2').value, document.getElementById('sentido2').value);
+		var latitud = convertirAGradosDecimales(document.getElementById('grados1').value, document.getElementById('minutos1').value, document.getElementById('segundos1').value, document.getElementById('sentido1').value);		
+		let cor = longitud + ','+ latitud;
+		updateMap(cor, 12);
+	}
+
+	  
 </script>
 	
 <script async defer
